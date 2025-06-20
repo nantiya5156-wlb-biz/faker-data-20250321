@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": 
+    {
+      "thaiId": { "type": "string", "method":"thaiId.random()" },
+      "FullName": { "type": "string", "locale":"en" },
+      "FullNameTh": { "type": "string", "locale":"th" },
+      "phoneNumber": { "type": "string", "pattern": "0^[6-9]{2}-[0-9]{3}-[0-9]{4}$" },
+      "age": { "type": "integer", "min":20, "max":100 },
+      "sex": { "type": "string", "enum": ["male", "female", "other"] },
+      "dateOfBirth": { "type": "string", "format": "date" },
+      "email": { "type": "string", "format": "email" },
+      "address": {
+        "type": "object",
+        "properties": {
+          "street": { "type": "string" },
+          "city": { "type": "string" },
+          "state": { "type": "string" }
+        }
+      }
+    },
+    "required": ["nameTh", "surnameTh", "email", "telephone"]
+  }
+  

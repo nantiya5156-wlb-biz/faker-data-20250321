@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Name Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Fake Name Cards</h1>
+    <div id="card-container"></div>
+
+    <script>
+        async function loadCards() {
+            const response = await fetch('data.json');
+            const data = await response.json();
+            const container = document.getElementById('card-container');
+
+            data.forEach(person => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <img src="https://dummyimage.com/200" alt="${person.name}" style="width:20%">
+                    <h2>${person.name}</h2>
+                    <p><strong>Job:</strong> ${person.jobTitle}</p>
+                    <p><strong>Company:</strong> ${person.company}</p>
+                    <p><strong>Email:</strong> ${person.email}</p>
+                    <p><strong>Phone:</strong> ${person.phone}</p>
+                    <p><strong>Address:</strong> ${person.address}</p>
+                    <hr/>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        loadCards();
+    </script>
+</body>
+</html>

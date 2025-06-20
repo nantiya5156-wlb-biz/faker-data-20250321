@@ -1,0 +1,21 @@
+{
+  "name": "faker-data-20250321",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "axios": "^1.9.0",
+    "csv-parser": "^3.2.0",
+    "faker": "^6.6.6",
+    "http-server": "^14.1.1",
+    "randexp": "^0.5.3",
+    "thaiid": "^1.1.2"
+  }
+}
